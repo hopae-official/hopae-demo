@@ -15,7 +15,7 @@ export default {
 
   // AppDownload
   "make sure you have your phone handy": "꼭 핸드폰과 uPort 앱이 있어야해요!",
-  "make sure you have the uport app downloaded": "꼭 핸드폰에 uPort 앱을 다운로드 받으셔야해요!",
+  "make sure you have the uport app downloaded": "꼭 핸드폰에 uPort 앱을 다운로드 받으세요",
 
   //ServiceCard"
   "youll be asked to share": "다음 항목들을 공유하게 됩니다",

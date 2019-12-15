@@ -150,10 +150,10 @@ const DIPLOMA = {
     "diplomaDetail2"
   ],
   claimData: {
-    "School Name": "The University of uPortlandia",
-    "Program Name": "French linguistics",
-    "Graduation Year": "2019",
-    "Final Grades": "B+"
+    "학교명": "제주대학교",
+    "전공과목": "컴퓨터 엔지니어링",
+    "졸업년도": "2019",
+    "학점": "B+"
   }
 };
 
