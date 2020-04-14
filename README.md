@@ -1,6 +1,6 @@
-# uPortlandia
+# Hopaeland
 
-uPortlandia is our vision of the future of data and identity management.  We hope that the examples contained within this repository will serve as a guide for your adoption of sovereign identity solution(s).
+Hopaeland is our vision of the future of data and identity management.  We hope that the examples contained within this repository will serve as a guide for your adoption of sovereign identity solution(s).
 
 ![uportlandia](https://j.gifs.com/wVrrvr.gif)
 
