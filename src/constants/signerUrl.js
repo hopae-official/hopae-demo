@@ -6,6 +6,7 @@ const getSignerUrl = () => process.env.REACT_APP_TARGET_ENV === "prod"
   : process.env.REACT_APP_TARGET_ENV === "stage"
     ? SIGNER_STAGE
     // : "http://localhost:3001/";
-    : "https://3nloy5gpz6.execute-api.us-east-1.amazonaws.com/stage/";
-
-export default getSignerUrl;
+    // : "https://3nloy5gpz6.execute-api.us-east-1.amazonaws.com/stage/";
+    : "https://demo.hopae.app/";
+    
+export default getSignerUrl
