@@ -8,6 +8,9 @@ async function jwtToUrl(jwt) {
     dataType: "json",
     data: jwt
   });
+  // 노노야...
+  // console.log("이게 과연 callbackId?? ");
+  // console.log(response.json.topicId);
   return createChasquiUrl(response.json.topicId);
 }
 

@@ -16,7 +16,7 @@ class Failure extends React.Component {
         </Col>
         <Col span={6}>
           <Heading>Uh, something went wrong</Heading>
-          <Description>It seems like we couldn’t find required information in your uPort app. </Description>
+          <Description>It seems like we couldn’t find required information in your Hopae app. </Description>
           <ErrorImage src={ErrorIcon} />
         </Col>
         <Col span={3}>

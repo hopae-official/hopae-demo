@@ -85,7 +85,7 @@ class Landing extends React.Component {
             <p>
               {t("Let's make sure you have access to your claims whenever and wherever you need them")}
               {t(SERVICES[serviceId].entity)}
-              {t("is going to send your new claims to your uPort app")}
+              {t("is going to send your new claims to your Hopae app")}
             </p>
           </Card>
         </Col>
@@ -93,7 +93,7 @@ class Landing extends React.Component {
       </Grid>
       <AttestationModal
         heading="Check your device"
-        description="Tap 'Accept' in your uPort app to receive your claims"
+        description="Tap 'Accept' in your Hopae app to receive your claims"
         infoHeading="You're Interacting with"
         serviceId={SERVICES[serviceId].id}
         issuer={{

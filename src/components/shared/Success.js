@@ -32,7 +32,7 @@ class Success extends React.Component {
         <h2>{t("Congratulations!")}</h2>
         <h3>{t("You received your")} {t(SERVICES[id].displayName)}</h3>
         <SuccessImage src={SuccessIcon} />
-        <p>{t("Your claims are stored in your uPort app")}</p>
+        <p>{t("Your claims are stored in your Hopae app")}</p>
       </TopHalf>
       <BotHalf>
         <Grid>

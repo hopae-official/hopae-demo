@@ -14,7 +14,7 @@ const LikeTheDemo = () => {
     <section>
       <Header>
         <Icon src={DevIcon} />
-        <h4>{t("Build user-centric trusted data apps with uPort")}</h4>
+        <h4>{t("Build user-centric trusted data apps with Hopae")}</h4>
       </Header>
       <p>
         {t("Issue, request and verify information about your users")}

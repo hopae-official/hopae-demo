@@ -18,7 +18,7 @@ import getSignerUrl from "./signerUrl";
 export const home = {
   logo: logo,
   logoLink: "https://uport.me/",
-  name: "제주 + uPort"
+  name: "제주 + Hopae"
 };
 
 // Registration Flow
@@ -102,7 +102,7 @@ export const registration = {
       }
     },
     toc: {
-      label: "I agree to the uPort",
+      label: "I agree to the Hopae",
       defaultValue: false,
       link: "https://www.uport.me/terms-conditions",
       linkLabel: "Terms and Conditions",
@@ -118,7 +118,7 @@ const CITY_ID = { // This should match the Registration Config
   name: "City ID",
   displayName: "cityIdDisplayName",
   icon: CityIDIcon,
-  entity: "The City of uPortlandia",
+  entity: "The Government of Jeju",
   description: "cityIdDescription",
   url: "/city",
   claim: "Citizenship",
@@ -136,7 +136,7 @@ const DIPLOMA = {
   name: "Diploma",
   displayName: "diplomaDisplayName",
   icon: DiplomaIcon,
-  entity: "The University of uPortlandia",
+  entity: "The University of Jeju",
   description: "diplomaDescription",
   url: "/university",
   claim: "Diploma",
@@ -233,7 +233,7 @@ const TRANSPORT = {
   name: "Monthly Bus Ticket",
   displayName: "transportDisplayName",
   icon: TransportIcon,
-  entity: "uPortlandia City Transit",
+  entity: "Jeju Island Transit",
   description: "transportDescription",
   url: "/transport",
   claim: "Bus Ticket",
@@ -255,7 +255,7 @@ const MUSEUM = {
   name: "Annual Membership",
   displayName: "museumDisplayName",
   icon: MuseumIcon,
-  entity: "uPortlandia Museum of Modern Art",
+  entity: "Jeju Museum of Modern Art",
   description: "museumDescription",
   url: "/museum",
   claim: "Museum Membership",

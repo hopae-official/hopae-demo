@@ -63,7 +63,7 @@ class Landing extends React.Component {
       <LoginModal
         show={loginModal}
         heading="First things first"
-        description="To login scan the QR code with the uPort app"
+        description="To login scan the QR code with the Hopae app"
         infoHeading="You're logging in to"
         serviceId={serviceId}
         issuer={{

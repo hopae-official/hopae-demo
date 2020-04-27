@@ -70,6 +70,8 @@ class Attestation extends React.Component {
   sendVerification = () => {
     const { serviceId, claim } = this.props;
     const requestId = shortId.generate();
+    // 노노놉!
+    // console.log("Attestation의 requestId가 callbackId인가..? " + requestId);
     this.setState({ qrData: null, requestId });
     this.props.sendVerification(serviceId, requestId, this.props.profile, claim);
   }
@@ -102,7 +104,7 @@ class Attestation extends React.Component {
             <Content.Header>
               <ButtonClose onClick={this.handleClose}>&times;</ButtonClose>
               {this.state.showQR
-                ? <CustomHeading>{t("Scan this QR Code using the uPort App")}</CustomHeading>
+                ? <CustomHeading>{t("Scan this QR Code using the Hopae App")}</CustomHeading>
                 : <CustomHeading>{t(heading)}</CustomHeading>}
             </Content.Header>
             <Content.Body>

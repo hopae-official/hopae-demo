@@ -43,10 +43,15 @@ function* verifyCredentials (action) {
   yield put(setLoading(CRED_VERIFY, false));
 }
 
+
 function* requestDisclosure(action) {
+  // generate socket
+
+
   const { serviceId, callbackId, requestedClaims, isMobile } = action;
   const callbackUrl = isMobile
     ? createCallbackUrl(callbackId)
+    //: `https://api.hopae.app/api/${callbackId}`
     : createChasquiUrl(callbackId);
 
   const expiresIn = 2 * 60; // seconds

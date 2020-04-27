@@ -7,15 +7,15 @@ export default {
   "Its Simple": "간단한 절차",
   "getRegistration": "제주도민증을 발급받습니다",
   "getRegistrationDescription": "도청에서 당신의 정보를 \"검증하고\" 도민증을 발급합니다",
-  "Store it in the uport app": "개인의 uPort 앱에 저장합니다",
+  "Store it in the Hopae app": "개인의 Hopae 앱에 저장합니다",
   "Own your information": "정보를 직접 소유하고 관리하세요. 언제, 누구와 어떤 정보를 공유할지 스스로 선택하세요.",
   "Get access to city services": "도청 사업들에 활용하세요.",
   "Enjoy perks and benefits": "도민으로서 받을 수 있는 모든 혜택과 복지를 간편하게 누리세요.",
   "Ready? Lets do this": "준비되셨나요? 시작해봅시다!",
 
   // AppDownload
-  "make sure you have your phone handy": "꼭 핸드폰과 uPort 앱이 있어야해요!",
-  "make sure you have the uport app downloaded": "꼭 핸드폰에 uPort 앱을 다운로드 받으세요",
+  "make sure you have your phone handy": "꼭 핸드폰과 Hopae 앱이 있어야해요!",
+  "make sure you have the Hopae app downloaded": "꼭 핸드폰에 Hopae 앱을 다운로드 받으세요",
 
   //ServiceCard"
   "youll be asked to share": "다음 항목들을 공유하게 됩니다",
@@ -27,53 +27,53 @@ export default {
   // Footer
   "Powered by": "Powered by",
 
-  "The City of uPortlandia": "제주도청",
+  "The Government of Jeju": "제주도청",
   "cityIdDisplayName": "제주도민증",
   "cityIdDescription": "디지털 제주도민증을 발급 받고 손쉽게 도민임을 인증하세요. 도내에 많은 혜택과 복지를 빠르고, 쉽게, 그리고 가끔 무료로 이용하실 수 있습니다.",
-  "cityIdStep1": "uPort로 로그인을 합니다",
+  "cityIdStep1": "Hopae로 로그인을 합니다",
   "cityIdStep2": "발급에 필요한 정보를 입력합니다",
   "cityIdStep3": "입력한 정보를 검증받습니다",
   "cityIdStep4": "제주도민증을 발급받습니다",
 
-  "The University of uPortlandia": "제주대학교",
+  "The University of Jeju": "제주대학교",
   "diplomaDisplayName": "성적증명서",
   "diplomaDescription": "성적증명서를 발급받을 수 있습니다. 간단히 발급받아서 다음 직장 인터뷰나 대학원에 진학하는데 사용하세요.",
-  "diplomaStep1": "uPort로 로그인을 합니다",
+  "diplomaStep1": "Hopae로 로그인을 합니다",
   "diplomaStep2": "입력한 정보를 검증받습니다",
   "diplomaStep3": "성적증명서를 발급받습니다",
 
   "Dream Job LLC": "한라전자",
   "employmentDisplayName": "재직증명서",
   "employmentDescription": "재직증명사실을 간단히 공유하세요. 부동산 대출이나 거래를 위해 여러장의 서류를 준비할 필요가 없습니다. 현재 급여내역도 선택적으로 공유가능합니다.",
-  "employmentStep1": "uPort로 로그인을 합니다",
+  "employmentStep1": "Hopae로 로그인을 합니다",
   "employmentStep2": "입력한 정보를 검증받습니다",
   "employmentStep3": "재직증명서를 발급받습니다",
 
   "People Care Insurance LLC": "국민의료보험공단",
   "insuranceDisplayName": "의료보험",
   "insuranceDescription": "전세계 어디서나 동일한 의료보험 혜택을 받으세요",
-  "insuranceStep1": "uPort로 로그인을 합니다",
+  "insuranceStep1": "Hopae로 로그인을 합니다",
   "insuranceStep2": "입력한 정보를 검증받습니다",
   "insuranceStep3": "보험 약관을 발급받습니다",
 
   "Your Health Medical Center": "제주한라병원 인터넷진료부",
   "pharmacyDisplayName": "처방전",
   "pharmacyDescription": "처방전을 받아 어디든 제출 가능합니다.",
-  "pharmacyStep1": "uPort로 로그인을 합니다",
+  "pharmacyStep1": "Hopae로 로그인을 합니다",
   "pharmacyStep2": "입력한 정보를 검증받습니다",
   "pharmacyStep3": "처방전을 발급받습니다",
 
-  "uPortlandia City Transit": "제주버스운송조합",
+  "Jeju Island Transit": "제주버스운송조합",
   "transportDisplayName": "정기권",
   "transportDescription": "제주도민이나 제주대생이신가요? 매월 도에서 지원하는 정기권을 받으세요!",
-  "transportStep1": "uPort로 로그인을 합니다",
+  "transportStep1": "Hopae로 로그인을 합니다",
   "transportStep2": "입력한 정보를 검증받습니다",
   "transportStep3": "정기권을 발급받습니다",
 
-  "uPortlandia Museum of Modern Art": "국립제주박물관",
+  "Jeju Museum of Modern Art": "국립제주박물관",
   "museumDisplayName": "연간회원권",
   "museumDescription": "제주도민증으로 무료 연간회원권을 받아보세요",
-  "museumStep1": "uPort로 로그인을 합니다",
+  "museumStep1": "Hopae로 로그인을 합니다",
   "museumStep2": "입력한 정보를 검증받습니다",
   "museumStep3": "연간회원권을 발급받습니다",
 
@@ -104,10 +104,10 @@ export default {
   "get your": "발급절차: ",
   "Receive your": "Receive your",
   "back": "Back",
-  "Login with uPort": "uPort로 로그인",
+  "Login with Hopae": "Hopae 로 로그인",
   "will ask you to share": ": 다음 항목들을 공유합니다",
   "Your claims were succesfully shared with": "성공적으로 제공한 정보를 공유했습니다:",
-  "is going to send your new claims to your uPort app": "에서 새로운 인증서를 uPort앱으로 보내드릴것입니다",
+  "is going to send your new claims to your Hopae app": "에서 새로운 인증서를 Hopae앱으로 보내드릴것입니다",
 
   "regnLandingHeading": "블록체인으로 인증하는 제주도민증을 발급받으세요!",
   "regnLandingStep1": "불필요한 보안프로그램이나 공인인증서가 필요 없습니다.",
@@ -115,12 +115,12 @@ export default {
   "regnLandingStep3": "도에서 무료로 관광지들과 박물관들을 방문할 수 있는 연간 회원권을 제공합니다.",
 
   // Login
-  "Open the uPort app to login": "uPort앱을 열어서 로그인하세요",
+  "Open the Hopae app to login": "Hopae앱을 열어서 로그인하세요",
   "Continue": "계속하기",
   "First things first": "시작하기전에 앞서..",
-  "To login scan the QR code with the uPort app": "uPort 앱으로 스캔해서 로그인",
+  "To login scan the QR code with the Hopae app": "Hopae 앱으로 스캔해서 로그인",
   "You're logging in to": "로그인하는 서비스",
-  "Tap to login with the uPort app": "uPort 앱으로 로그인 하려면 클릭",
+  "Tap to login with the Hopae app": "Hopae 앱으로 로그인 하려면 클릭",
   "Don’t have the app? Download it from your store": "아직 앱이 없으신가요? 지금 바로 다운로드 하세요",
   "Issuer": "Issuer",
   "No information requested": "추가 인증정보가 없습니다",
@@ -148,21 +148,21 @@ export default {
   "Submit": "확인",
 
   "Psst, even though it's just a demo": "참고로, 이건 데모일 뿐입니다",
-  "Any data that you enter is securely protected and encrypted": "입력하신 정보는 유일하게 핸드폰에 uPort에만 저장됩니다. (언제든지 삭제가능합니다)",
+  "Any data that you enter is securely protected and encrypted": "입력하신 정보는 유일하게 핸드폰에 Hopae에만 저장됩니다. (언제든지 삭제가능합니다)",
   "We do not store any of this information and do not reveal it to any party": "모든 데이터는 웹사이트나 어떤 데이터베이스에도 남거나 저장되지 않습니다. 또한 제3자와도 공유하지 않습니다.",
 
   "Good News!": "축하합니다!",
   "regnSuccessHeading1": "축하합니다!",
   "regnSuccessHeading2": "그 다음 과정은?",
   "regnSuccessText1": "제공된 정보가 정상적으로 검증되었습니다. 제주도민증을 발급받을 수 있습니다.",
-  "regnSuccessText2": "이제 어디를 가던 항상 제주도민증을 가지고 다닐 수 있습니다.",
-  "regnSuccessText3": "에서 uPort앱으로 도민증을 발급합니다.",
+  "regnSuccessText2": "이제 어디를 가던 항상 제주도민증을 가지고 다닐 수 있습니다. ",
+  "regnSuccessText3": "에서 Hopae앱으로 도민증을 발급합니다.",
   "regnReceiveCTA": "제주도민증 발급받기",
   "Invalid date of birth": "유효하지 않은 값입니다",
   "You must agree to the terms and conditions": "개인정보 이용약관에 동의해야 합니다.",
 
   // Attestation
-  "Scan this QR Code using the uPort App": "uPort앱으로 위 QR코드를 스캔하세요",
+  "Scan this QR Code using the Hopae App": "Hopae앱으로 위 QR코드를 스캔하세요",
   "Check your device": "핸드폰을 확인해보세요",
   "Not receiving the request?": "아무일도 일어나지 않나요?",
   "No verified information to receive": "유효한 인증서를 받지 못했습니다",
@@ -173,31 +173,35 @@ export default {
   "Verified information you'll receive": "인증서에 받으실 검증된 정보",
   "Done": "완료",
   "Back to Home": "Back to Home",
-  "Tap 'Accept' in your uPort app to receive your claims": "uPort앱에서 'Accept' 버튼을 눌러 저장하세요",
+  "Tap 'Accept' in your Hopae app to receive your claims": "Hopae앱에서 'Accept' 버튼을 눌러 저장하세요",
 
   // Success
   "Congratulations!": "발급완료!",
   "You received your": "지금부터 바로 사용가능: ",
-  "Your claims are stored in your uPort app": "모든 정보들은 uPort앱에 저장되었습니다.",
+  "Your claims are stored in your Hopae app": "모든 정보들은 Hopae앱에 저장되었습니다.",
   "Services that honor": "아래 서비스에서 사용할 수 있습니다.",
   "Back to Dashboard": "돌아가기",
 
+  // Prerequisite
+  "Uh, something went wrong": "발급에 실패했어요..",
+  "It seems like we couldn’t find required information in your Hopae app." : "Hopae앱에 필요 정보가 모두 있는지 다시 한번 확인해주세요!",
+
   // LikeDemo
   "Like the demo?": "데모가 어떠신가요?",
-  "Build user-centric trusted data apps with uPort": "uPort로 유저중심의 신뢰하는 데이터관리 앱을 만들어보세요",
+  "Build user-centric trusted data apps with Hopae": "Hopae로 유저중심의 신뢰하는 데이터관리 앱을 만들어보세요",
   "Issue, request and verify information about your users": "",
   "View Documentation": "View Documentation",
-  "Issue verified information to citizens in your city": "Issue verified information to citizens in your city",
-  "Build trusted data ecosystem in your city": "Build trusted data ecosystem in your city. Let businesses and organizations thrive while maintaining privacy of the citizens.",
+  "Issue verified information to citizens in your city": "제주도민에게 쉽게 증명서를 발급해보세요",
+  "Build trusted data ecosystem in your city": "제주시에 신뢰받는 데이터 생태계를 구축할 수 있습니다",
   "Contact Us": "Contact Us",
 
   // City/ClaimExists
-  "regnClaimExists": "It looks like you already have a uPortlandia City ID",
-  "regnBenefits": "With your City ID you have easy and quick access to numerous services and programs in uPortlandia",
+  "regnClaimExists": "It looks like you already have a Jeju Island ID",
+  "regnBenefits": "With your City ID you have easy and quick access to numerous services and programs in Jeju",
 
   // Redirect
   "See you later!": "다른 페이지로 이동중입니다",
-  "You are leaving the uPortlandia dashboard":  "대시보드를 떠나서 다른 서비스 페이지로 이동합니다: ",
+  "You are leaving the Hopaeland dashboard":  "대시보드를 떠나서 다른 서비스 페이지로 이동합니다: ",
   "website to continue": "",
   "Bye!": "Bye!",
 

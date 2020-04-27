@@ -83,7 +83,7 @@ class Landing extends React.Component {
       </Grid>
       <AttestationModal
         heading="Check your device"
-        description="Tap 'Accept' in your uPort app to receive your claims"
+        description="Tap 'Accept' in your Hopae app to receive your claims"
         infoHeading="You're Interacting with..."
         serviceId={SERVICES[serviceId].id}
         issuer={{

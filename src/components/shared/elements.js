@@ -149,7 +149,7 @@ export const LoginButton = props => {
   const { t } = useTranslation();
   return (<_LoginButton className="long" secondary {...props}>
     <LoginButtonLogo src={uPortWhite} />
-    {` ${props.text || t("Login with uPort")}`}
+    {` ${props.text || t("Login with Hopae")}`}
   </_LoginButton>);
 }
 
@@ -170,7 +170,7 @@ const _LoginLink = styled.a`
 export const LoginLink = props => {
   return (<_LoginLink className="long" secondary {...props}>
     <LoginButtonLogo src={uPortWhite} />
-    {` ${props.text || "Login with uPort"}`}
+    {` ${props.text || "Login with Hopae"}`}
   </_LoginLink>);
 }
 

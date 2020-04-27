@@ -48,6 +48,9 @@ class UportLogin extends React.Component {
   }
   componentDidUpdate(prevProps, prevState) {
     const { login, messages, pollChasqui, show, verifyCredentials, serviceId } = this.props;
+    console.log(login)
+    console.log(messages)
+    console.log(serviceId)
     const { waiting } = this.state;
     if(show && !prevProps.show) {
       this.handleLogin();
@@ -60,22 +63,35 @@ class UportLogin extends React.Component {
         const pngBuffer = qrImage.imageSync(login.url, { type: "png" });
         const qrData = "data:image/png;charset=utf-8;base64, " + pngBuffer.toString("base64");
         this.setState({ qrData });
+        console.log("1. QR is set successfully!")
         pollChasqui(login.callbackId);
+        console.log("2. Keep Polling until getting back success state!");
       }
     } else if(!login.profile && login.url) {
       // check for Chasqui Response
       let message = messages.find(msg => msg.id === login.callbackId);
-      if(message && message.loading && !waiting) {
+      console.log("message: loading status - " + message.loading);
+      console.log(messages);
+      //if(message && message.loading && !waiting) {
+      if(message && !message.content && !waiting) {
         this.setState({ waiting: true });
-      } else if(message && !message.loading && waiting) {
+        //verifyCredentials(serviceId, message.content);
+        console.log("일단 인터셉트...");
+        console.log("3-1. 여기니?");
+        console.log(message.loading);
+      } //else if(message && !message.loading && waiting) {
+      else if(message && message.content && waiting) {
         // verify token
+        console.log("3-2. 여기니?");
         this.setState({ waiting: false });
         verifyCredentials(serviceId, message.content);
+        console.log("4. Verify the token responded to a request!");
       }
     } else if(!prevProps.login.profile && login.profile) {
       // logged in!
       this.setState({ qrData: null });
       this.props.onLoginSuccess(login.profile);
+      console.log("5. Logged in Successfully!");
     }
   }
   handleClose = () => {
@@ -128,7 +144,7 @@ class UportLogin extends React.Component {
               {this.isMobile
                 ? <React.Fragment>
                   <h3>{t(heading)}</h3>
-                  <h4>{t("Open the uPort app to login")}</h4>
+                  <h4>{t("Open the Hopae app to login")}</h4>
                 </React.Fragment>
                 : <React.Fragment>
                   <h3>{t(heading)}</h3>
@@ -143,7 +159,7 @@ class UportLogin extends React.Component {
                   <QRWrapper>
                     <a href={url} target="_blank">
                       {this.isMobile
-                        ? t("Tap to login with the uPort app")
+                        ? t("Tap to login with the Hopae app")
                         : <img className="qr" src={qrData} alt="QR" />}
                     </a>
                   </QRWrapper>

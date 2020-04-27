@@ -29,10 +29,14 @@ const poll = async (url, callbackId) => {
     if(data.status !== "success")
       throw new Error(`Failed response from ${url}`);
     const content = data && data.message && data.message.content;
+    console.log("poll's content: " + content)
     if(content && content.length) {
       try {
         const contentJSON = JSON.parse(content);
-        if(isJWT(contentJSON.access_token))
+        console.log(contentJSON);
+        console.log("poll's jwt: " + contentJSON.access_token);
+        //if(isJWT(contentJSON.access_token))
+          console.log("poll's jwt: " + contentJSON.access_token);
           return contentJSON.access_token;
       } catch(ex) {
         console.log(ex);

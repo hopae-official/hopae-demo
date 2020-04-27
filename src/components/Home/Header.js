@@ -40,7 +40,7 @@ class Header extends React.Component {
           </Hero.Step>
           <Hero.Step>
             <Hero.Step.Icon src={uPortAppIcon} style={{ position: "relative", left: "-15px" }} />
-            <h4>{t("Store it in the uport app")}</h4>
+            <h4>{t("Store it in the Hopae app")}</h4>
             <p>{t("Own your information")}</p>
           </Hero.Step>
           <Hero.Step>

@@ -18,8 +18,10 @@ class App extends React.Component {
     const hash = window.location.hash.slice(1);
     if(hash) {
       const params = qs.parse(hash);
-      if(params["access_token"]) {
+      console.log("hash안: const params = qs.parse(hash);");
+      if(params["access_token"] !== null) {
         const jwt = params["access_token"];
+        console.log("const jwt = params['access_token']");
         this.props.verifyCredentials(serviceId, jwt);
         window.history.pushState(
           "",
