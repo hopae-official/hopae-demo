@@ -17,8 +17,8 @@ const mapDispatchToProp = dispatch => ({
   requestDisclosure(serviceId, id, requestedClaims, isMobile) {
     dispatch(actions.reqDisclosure(serviceId, id, requestedClaims, isMobile));
   },
-  pollChasqui(id) {
-    dispatch(actions.pollChasqui(id));
+  pollChasqui(id, socket) {
+    dispatch(actions.pollChasqui(id, socket));
   },
   stopPollChasqui(id) {
     dispatch(actions.stopPollChasqui(id));

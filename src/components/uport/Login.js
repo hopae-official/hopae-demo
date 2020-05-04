@@ -60,7 +60,8 @@ class UportLogin extends React.Component {
         const pngBuffer = qrImage.imageSync(login.url, { type: "png" });
         const qrData = "data:image/png;charset=utf-8;base64, " + pngBuffer.toString("base64");
         this.setState({ qrData });
-        pollChasqui(login.callbackId);
+        // console.log(login);
+        pollChasqui(login.callbackId, login.socket);
       }
     } else if(!login.profile && login.url) {
       // check for Chasqui Response

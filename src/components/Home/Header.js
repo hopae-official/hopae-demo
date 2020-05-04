@@ -115,13 +115,14 @@ Hero.Step.Icon = styled.img`
 `;
 Hero.Welcome = styled.div`
   background: ${theme.header.bg};
+  height: ${theme.header.height};
   background-size: cover;
   color: ${theme.homeHeader.textColor};
   padding: 2vh 20px 10vh;
   position: relative;
   z-index: 2;
   text-align: center;
-  ${large("padding: 5vh 30vw 25vh;")}
+  ${large("padding: 15vh 30vw 25vh;")}
   ${mediumOnly("padding: 5vh 25vw 25vh;")}
 
   h2 {

@@ -1,4 +1,5 @@
 export default [
+  { name: "대한민국", id: "KR"},
   { name: "Afghanistan", id: "AF" },
   { name: "Åland Islands", id: "AX" },
   { name: "Albania", id: "AL" },
@@ -115,7 +116,7 @@ export default [
   { name: "Kenya", id: "KE" },
   { name: "Kiribati", id: "KI" },
   { name: "Korea, Democratic People\"S Republic of", id: "KP" },
-  { name: "Korea, Republic of", id: "KR" },
+  // { name: "Korea, Republic of", id: "KR" },
   { name: "Kuwait", id: "KW" },
   { name: "Kyrgyzstan", id: "KG" },
   { name: "Lao People\"S Democratic Republic", id: "LA" },

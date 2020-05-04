@@ -2,10 +2,11 @@ import dayjs from "dayjs";
 
 // Images/Logos
 import logo from "../images/uport-logo.svg";
-import CityIDIcon from "../images/city-logo.png";
-import DiplomaIcon from "../images/university-logo.png";
+// import CityIDIcon from "../images/city-logo.png";
+import CityIDIcon from "../images/jeju/jeju.png";
+import DiplomaIcon from "../images/jeju/university.png";
 import EmploymentIcon from "../images/company-logo.png";
-import InsuranceIcon from "../images/insurance-logo.png";
+import InsuranceIcon from "../images/jeju/insurance.png";
 import PharmacyIcon from "../images/pharmacy-logo.png";
 import TransportIcon from "../images/transport-logo.png";
 import MuseumIcon from "../images/museum-logo.png";
@@ -17,7 +18,7 @@ import getSignerUrl from "./signerUrl";
 export const home = {
   logo: logo,
   logoLink: "https://uport.me/",
-  name: "uPortlandia"
+  name: "제주 + uPort"
 };
 
 // Registration Flow
@@ -59,7 +60,7 @@ export const registration = {
     },
     province: {
       label: "State or Province",
-      defaultValue: "",
+      defaultValue: "제주",
       type: "text",
       required: true
     },
@@ -120,7 +121,7 @@ const CITY_ID = { // This should match the Registration Config
   entity: "The City of uPortlandia",
   description: "cityIdDescription",
   url: "/city",
-  claim: "Uportlandia City ID",
+  claim: "Citizenship",
   steps: [
     "cityIdStep1",
     "cityIdStep2",
@@ -149,10 +150,10 @@ const DIPLOMA = {
     "diplomaDetail2"
   ],
   claimData: {
-    "School Name": "The University of uPortlandia",
-    "Program Name": "French linguistics",
-    "Graduation Year": "2019",
-    "Final Grades": "B+"
+    "학교명": "제주대학교",
+    "전공과목": "컴퓨터 엔지니어링",
+    "졸업년도": "2019",
+    "학점": "B+"
   }
 };
 

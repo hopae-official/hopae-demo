@@ -13,7 +13,8 @@ const options = {
   resources: resourceBundle
 };
 
-const presetLng = sessionStorage.getItem("uPortlandia_lng");
+// const presetLng = sessionStorage.getItem("uPortlandia_lng");
+const presetLng = "kr"
 if(presetLng)
   options.lng = presetLng;
 
