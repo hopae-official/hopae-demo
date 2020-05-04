@@ -3,7 +3,8 @@ import * as ACTIONS from "../constants/actions";
 const initialState = {
   callbackId: null,
   url: null,
-  profile: null
+  profile: null,
+  endpoint: "https://api.hopae.app/"
 };
 
 const uportLoginReducer = (state=initialState, action) => {
@@ -11,14 +12,15 @@ const uportLoginReducer = (state=initialState, action) => {
     case ACTIONS.REQ_DISCLOSURE:
       return {
         ...initialState,
-        callbackId: action.callbackId
+        callbackId: action.callbackId,
       };
 
     case ACTIONS.REQ_DISCLOSURE_OK:
       return {
         ...state,
         callbackId: action.callbackId,
-        url: action.url
+        url: action.url,
+        socket: action.socket,
       };
 
     case ACTIONS.CRED_VERIFY_OK:

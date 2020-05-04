@@ -1,6 +1,7 @@
-import { spawn, takeEvery, put, call } from "redux-saga/effects";
+import { spawn, takeEvery, put, call, take } from "redux-saga/effects";
 import { transport } from "uport-transports";
 import { captureException } from "@sentry/browser";
+import { createSocketChannel } from '../utils/createSocketChannel';
 
 import {
   CRED_VERIFY,
@@ -19,8 +20,9 @@ import createCallbackUrl from "../utils/createCallbackUrl";
 import request from "../utils/request";
 import createJwtUrl from "../utils/createJwtUrl";
 import { SIGNER_URL } from "../constants/config";
+import socketIOClient from 'socket.io-client';
 
-function* verifyCredentials (action) {
+function* verifyCredentials(action) {
   const { serviceId, token } = action;
   yield put(setLoading(CRED_VERIFY, true));
   try {
@@ -36,11 +38,34 @@ function* verifyCredentials (action) {
     profile.publicEncKey = profile.boxPub;
     yield put(verifyCredentialsSuccess(profile));
     yield put(saveProfile(profile));
-  } catch(ex) {
+  } catch (ex) {
     console.error(ex);
     captureException(ex);
   }
   yield put(setLoading(CRED_VERIFY, false));
+}
+
+const connect = () => {
+  const socket = socketIOClient(`${SIGNER_URL}`);
+  return new Promise((resolve) => {
+    socket.on('connect', () => {
+      resolve(socket)
+    })
+  })
+}
+
+function* onMessage(socket, type) {
+  {
+    const channel = yield call(createSocketChannel, socket, type);
+    while (true) {
+      try {
+        const message = yield take(channel);
+        console.log(message);
+      } catch (e) {
+        alert(e.message);
+      }
+    }
+  }
 }
 
 function* requestDisclosure(action) {
@@ -50,28 +75,37 @@ function* requestDisclosure(action) {
     : createChasquiUrl(callbackId);
 
   const expiresIn = 2 * 60; // seconds
-  yield put(setLoading(REQ_DISCLOSURE, true));
+  const socket = yield call(connect);
+  console.log(socket);
+  console.log(socket.id);
+  let channel;
   try {
     const response = yield call(request, `${SIGNER_URL}api/request_disclosure`, {
       method: "post",
       dataType: "json",
       data: {
         serviceId,
-        requested: [ "name" ],
+        requested: ["name"],
         verified: requestedClaims,
         notifications: !isMobile,
-        callbackUrl,
+        callbackUrl: `${SIGNER_URL}?id=${socket.id}`,
         expiresIn
       }
     });
     const { jwt } = response.json;
     const jwtUrl = yield call(createJwtUrl, jwt, callbackUrl, isMobile);
-    yield put(reqDisclosureSuccess(callbackId, jwtUrl));
-  } catch(ex) {
+
+    yield put(setLoading(REQ_DISCLOSURE, true));
+    yield put(reqDisclosureSuccess(callbackId, jwtUrl, socket));
+  } catch (ex) {
     console.log(ex);
     captureException(ex);
   }
+
   yield put(setLoading(REQ_DISCLOSURE, false));
+  channel = yield call(createSocketChannel, socket, 'dm');
+  const message = yield take(channel);
+  console.log(message)
 }
 
 function* sendVerification(action) {
@@ -99,17 +133,17 @@ function* sendVerification(action) {
     });
     const { jwt } = response.json;
     const jwtUrl = yield call(createJwtUrl, jwt, callbackUrl, isMobile);
-    if(isMobile) {
+    if (isMobile) {
       yield put(sendVerificationSuccess(callbackId, jwtUrl));
     } else {
-      if(pushToken && publicEncKey) {
+      if (pushToken && publicEncKey) {
         transport.push.send(pushToken, publicEncKey)(jwt);
         yield put(sendVerificationSuccess(callbackId, jwtUrl, true));
       } else {
         yield put(sendVerificationSuccess(callbackId, jwtUrl));
       }
     }
-  } catch(ex) {
+  } catch (ex) {
     console.log(ex);
     captureException(ex);
   }

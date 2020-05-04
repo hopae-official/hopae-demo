@@ -11,9 +11,10 @@ export const stopPollChasqui = callbackId => ({
   callbackId
 });
 
-export const pollChasqui = callbackId => ({
+export const pollChasqui = (callbackId, socket) => ({
   type: ACTIONS.POLL_CHASQUI,
-  callbackId
+  callbackId,
+  socket
 });
 
 export const pollChasquiSuccess = (callbackId, value) => ({
@@ -38,10 +39,11 @@ export const reqDisclosure = (serviceId, callbackId, requestedClaims, isMobile=f
   isMobile
 });
 
-export const reqDisclosureSuccess = (callbackId, url) => ({
+export const reqDisclosureSuccess = (callbackId, url, socket) => ({
   type: ACTIONS.REQ_DISCLOSURE_OK,
   callbackId,
-  url
+  url,
+  socket
 });
 
 export const verifyCredentials = (serviceId, token) => ({
