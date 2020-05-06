@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 
 // Images/Logos
-import logo from "../images/uport-logo.svg";
+import logo from "../images/hopae-logo.png";
 // import CityIDIcon from "../images/city-logo.png";
 import CityIDIcon from "../images/jeju/jeju.png";
 import DiplomaIcon from "../images/jeju/university.png";
@@ -17,8 +17,8 @@ import getSignerUrl from "./signerUrl";
 // Home Page
 export const home = {
   logo: logo,
-  logoLink: "https://uport.me/",
-  name: "제주 + uPort"
+  logoLink: "https://hopae.app/",
+  name: "제주 + Hopae"
 };
 
 // Registration Flow
@@ -34,14 +34,20 @@ export const registration = {
     ]
   },
   form: {
-    firstName: {
-      label: "First Name",
-      defaultValue: "",
-      type: "text",
-      required: true
-    },
-    lastName: {
-      label: "Last Name",
+    // firstName: {
+    //   label: "First Name",
+    //   defaultValue: "",
+    //   type: "text",
+    //   required: true
+    // },
+    // lastName: {
+    //   label: "Last Name",
+    //   defaultValue: "",
+    //   type: "text",
+    //   required: true
+    // },
+    name: {
+      label: "Name",
       defaultValue: "",
       type: "text",
       required: true
@@ -70,13 +76,13 @@ export const registration = {
       type: "text",
       required: true
     },
-    country: {
-      label: "Country",
-      defaultValue: "",
-      type: "dropdown",
-      items: COUNTRIES,
-      required: true
-    },
+    // country: {
+    //   label: "Country",
+    //   defaultValue: "",
+    //   type: "dropdown",
+    //   items: COUNTRIES,
+    //   required: true
+    // },
     dob: {
       label: "Date of Birth",
       defaultValue: "",
@@ -298,6 +304,14 @@ const LAST_NAME = {
   honoredBy: [DIPLOMA, INSURANCE, MUSEUM, TRANSPORT, PHARMACY]
 };
 
+const NAME = {
+  id: "name",
+  name: "Name",
+  displayName: "Name",
+  issuedBy: [CITY_ID],
+  honoredBy: [DIPLOMA, INSURANCE, MUSEUM, TRANSPORT, PHARMACY]
+};
+
 const DATE_OF_BIRTH = {
   id: "dob",
   name: "Date of Birth",
@@ -406,27 +420,27 @@ const MUSEUM_MEMBERSHIP = {
 };
 
 // Attach claims to services
-CITY_ID.generatedClaims = [FIRST_NAME, LAST_NAME, ADDRESS, DATE_OF_BIRTH];
+CITY_ID.generatedClaims = [NAME, ADDRESS, DATE_OF_BIRTH];
 CITY_ID.requiredClaims = CITY_ID.generatedClaims.map(c => ({
   ...c,
   issuedBy: [YOURSELF]
 }));
-DIPLOMA.requiredClaims = [FIRST_NAME, LAST_NAME, DATE_OF_BIRTH];
+DIPLOMA.requiredClaims = [NAME, DATE_OF_BIRTH];
 DIPLOMA.requiredServices = [CITY_ID];
 DIPLOMA.generatedClaims = [SCHOOL_NAME, PROGRAM_NAME, GRADUATION_YEAR, FINAL_GRADES];
-COMPANY.requiredClaims = [FIRST_NAME, LAST_NAME, SCHOOL_NAME, PROGRAM_NAME, FINAL_GRADES];
+COMPANY.requiredClaims = [NAME, SCHOOL_NAME, PROGRAM_NAME, FINAL_GRADES];
 COMPANY.requiredServices = [CITY_ID, DIPLOMA];
 COMPANY.generatedClaims = [COMPANY_NAME, SALARY, DATE_OF_EMPLOYMENT];
-INSURANCE.requiredClaims = [FIRST_NAME, LAST_NAME, COMPANY_NAME, DATE_OF_EMPLOYMENT];
+INSURANCE.requiredClaims = [NAME, COMPANY_NAME, DATE_OF_EMPLOYMENT];
 INSURANCE.requiredServices = [CITY_ID, COMPANY];
 INSURANCE.generatedClaims = [POLICY_NUMBER, GROUP_NUMBER, DEPENDENCIES];
-PHARMACY.requiredClaims = [FIRST_NAME, LAST_NAME, POLICY_NUMBER, GRADUATION_YEAR, DEPENDENCIES];
+PHARMACY.requiredClaims = [NAME, POLICY_NUMBER, GRADUATION_YEAR, DEPENDENCIES];
 PHARMACY.requiredServices = [CITY_ID, INSURANCE, DIPLOMA];
 PHARMACY.generatedClaims = [PRESCRIPTION_DRUG];
-TRANSPORT.requiredClaims = [FIRST_NAME, LAST_NAME, ADDRESS, DATE_OF_BIRTH, GRADUATION_YEAR];
+TRANSPORT.requiredClaims = [NAME, ADDRESS, DATE_OF_BIRTH, GRADUATION_YEAR];
 TRANSPORT.requiredServices = [CITY_ID, DIPLOMA];
 TRANSPORT.generatedClaims = [BUS_TICKET];
-MUSEUM.requiredClaims = [FIRST_NAME, LAST_NAME, ADDRESS, DATE_OF_BIRTH]
+MUSEUM.requiredClaims = [NAME, ADDRESS, DATE_OF_BIRTH]
 MUSEUM.requiredServices = [CITY_ID];
 MUSEUM.generatedClaims = [MUSEUM_MEMBERSHIP];
 

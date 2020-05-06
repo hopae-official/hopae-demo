@@ -4,10 +4,10 @@ import { useTranslation } from "react-i18next";
 
 import { Container } from "../shared/grid";
 import * as theme from "../shared/theme";
-import UportLogo from "../../images/uport-logo.svg";
+import UportLogo from "../../images/hopae-logo.png";
 
 // eslint-disable-next-line
-const link = <a href="https://uport.me" target="_blank">uPort</a>;
+const link = <a href="https://hopae.app" target="_blank">Hopae</a>;
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -56,6 +56,7 @@ const Center = styled.div`
 const Logo = styled.img`
   display: inline-block;
   margin-right: 10px;
+  width: 20px;
 `;
 
 export default Footer;
