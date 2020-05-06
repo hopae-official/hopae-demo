@@ -70,15 +70,13 @@ function* onMessage(socket, type) {
 
 function* requestDisclosure(action) {
   const { serviceId, callbackId, requestedClaims, isMobile } = action;
+  const socket = yield call(connect);
   const callbackUrl = isMobile
     ? createCallbackUrl(callbackId)
-    : createChasquiUrl(callbackId);
+    // : createChasquiUrl(callbackId);
+    : `${SIGNER_URL}?id=${socket.id}`
 
   const expiresIn = 2 * 60; // seconds
-  const socket = yield call(connect);
-  console.log(socket);
-  console.log(socket.id);
-  let channel;
   try {
     const response = yield call(request, `${SIGNER_URL}api/request_disclosure`, {
       method: "post",
@@ -88,13 +86,12 @@ function* requestDisclosure(action) {
         requested: ["name"],
         verified: requestedClaims,
         notifications: !isMobile,
-        callbackUrl: `${SIGNER_URL}?id=${socket.id}`,
+        callbackUrl,
         expiresIn
       }
     });
     const { jwt } = response.json;
     const jwtUrl = yield call(createJwtUrl, jwt, callbackUrl, isMobile);
-
     yield put(setLoading(REQ_DISCLOSURE, true));
     yield put(reqDisclosureSuccess(callbackId, jwtUrl, socket));
   } catch (ex) {
@@ -103,7 +100,7 @@ function* requestDisclosure(action) {
   }
 
   yield put(setLoading(REQ_DISCLOSURE, false));
-  channel = yield call(createSocketChannel, socket, 'dm');
+  const channel = yield call(createSocketChannel, socket, 'dm');
   const message = yield take(channel);
   console.log(message)
 }
@@ -116,9 +113,11 @@ function* sendVerification(action) {
   const isMobile = action.isMobile;
   const pushToken = profile.pushToken;
   const publicEncKey = profile.publicEncKey;
+  const socket = yield call(connect);
   const callbackUrl = isMobile
     ? createCallbackUrl(callbackId)
-    : createChasquiUrl(callbackId);
+    // : createChasquiUrl(callbackId);
+    : `${SIGNER_URL}?id=${socket.id}`
   yield put(setLoading(SEND_VERIF, true));
   try {
     const response = yield call(request, `${SIGNER_URL}api/send_verification`, {

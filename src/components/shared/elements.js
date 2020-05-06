@@ -12,7 +12,7 @@ import Dummy1 from "../../images/dummy-content-1.svg";
 import Dummy2 from "../../images/dummy-content-2.svg";
 import Dummy3 from "../../images/dummy-content-3.svg";
 import Dummy4 from "../../images/dummy-content-4.svg";
-import uPortWhite from "../../images/uport-icon-white.svg";
+import uPortWhite from "../../images/hopae-logo-white.svg";
 
 export const Form = styled.form``;
 Form.displayName = "Form";
@@ -144,6 +144,7 @@ const _LoginButton = styled(Button)`
 `;
 const LoginButtonLogo = styled.img`
   margin-right: 10px;
+  width: 20px;
 `;
 export const LoginButton = props => {
   const { t } = useTranslation();

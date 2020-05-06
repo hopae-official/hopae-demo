@@ -159,7 +159,7 @@ export default {
   "regnSuccessText2": "이제 어디를 가던 항상 제주도민증을 가지고 다닐 수 있습니다.",
   "regnSuccessText3": "에서 Hopae앱으로 도민증을 발급합니다.",
   "regnReceiveCTA": "제주도민증 발급받기",
-  "Invalid date of birth": "유효하지 않은 값입니다",
+  "Invalid date of birth": "20세 이상이어야 발급받을 수 있습니다.",
   "You must agree to the terms and conditions": "개인정보 이용약관에 동의해야 합니다.",
 
   // Attestation

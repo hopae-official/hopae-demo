@@ -95,7 +95,7 @@ export const registration = {
         const today = dayjs();
         if(!/^\d{4}-\d{2}-\d{2}$/.test(value) ||
           !dayjs(value).isValid() ||
-          dayjs(value).year() > today.year() - 13 ||
+          dayjs(value).year() > today.year() - 20 ||
           dayjs(value).year() < 1900
         ) {
           return {
