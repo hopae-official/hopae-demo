@@ -122,8 +122,8 @@ Hero.Welcome = styled.div`
   position: relative;
   z-index: 2;
   text-align: center;
-  ${large("padding: 15vh 30vw 25vh;")}
-  ${mediumOnly("padding: 5vh 25vw 25vh;")}
+  ${large("padding: 25vh 10vw 25vh;")}
+  ${mediumOnly("padding: 25vh 5vw 25vh;")}
 
   h2 {
     font-size: 1rem;
