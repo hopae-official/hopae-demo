@@ -7,7 +7,7 @@ import * as theme from "../shared/theme";
 import UportLogo from "../../images/uport-logo.svg";
 
 // eslint-disable-next-line
-const link = <a href="https://uport.me" target="_blank">uPort</a>;
+const link = <a href="https://uport.me" target="_blank">Hopae</a>;
 
 const Footer = () => {
   const { t } = useTranslation();

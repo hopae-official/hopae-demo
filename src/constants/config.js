@@ -18,7 +18,7 @@ import getSignerUrl from "./signerUrl";
 export const home = {
   logo: logo,
   logoLink: "https://uport.me/",
-  name: "제주 + uPort"
+  name: "제주 + Hopae"
 };
 
 // Registration Flow
