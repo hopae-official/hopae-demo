@@ -25,6 +25,7 @@ import socketIOClient from 'socket.io-client';
 function* verifyCredentials(action) {
   const { serviceId, token } = action;
   yield put(setLoading(CRED_VERIFY, true));
+  const socket = yield call(connect);
   try {
     const response = yield call(request, `${SIGNER_URL}api/verify_credentials`, {
       method: "post",
@@ -36,6 +37,10 @@ function* verifyCredentials(action) {
     });
     const { profile } = response.json;
     profile.publicEncKey = profile.boxPub;
+    socket.emit('dm', {
+      id: profile.callbackUrl,
+      result: true
+    })
     yield put(verifyCredentialsSuccess(profile));
     yield put(saveProfile(profile));
   } catch (ex) {
