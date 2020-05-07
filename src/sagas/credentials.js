@@ -54,20 +54,6 @@ const connect = () => {
   })
 }
 
-function* onMessage(socket, type) {
-  {
-    const channel = yield call(createSocketChannel, socket, type);
-    while (true) {
-      try {
-        const message = yield take(channel);
-        console.log(message);
-      } catch (e) {
-        alert(e.message);
-      }
-    }
-  }
-}
-
 function* requestDisclosure(action) {
   const { serviceId, callbackId, requestedClaims, isMobile } = action;
   const socket = yield call(connect);
@@ -105,6 +91,30 @@ function* requestDisclosure(action) {
   console.log(message)
 }
 
+const expoPush = async (expoPushToken, issuer, jwt) => {
+  const message = {
+    to: expoPushToken,
+    sound: 'default',
+    title: 'A new HOPASS has arrived',
+    body: issuer + '에서 발급한 인증서가 도착했습니다. \n클릭해서 저장하세요!',
+    data: { jwt },
+    ttl: 30,
+    _displayInForeground: true,
+  };
+  const response = await fetch('https://exp.host/--/api/v2/push/send', {
+    mode: 'no-cors',
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Accept-encoding': 'gzip, deflate',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(message),
+  });
+  console.log(message);
+  return response
+}
+
 function* sendVerification(action) {
   const callbackId = action.callbackId;
   const serviceId = action.serviceId;
@@ -113,6 +123,7 @@ function* sendVerification(action) {
   const isMobile = action.isMobile;
   const pushToken = profile.pushToken;
   const publicEncKey = profile.publicEncKey;
+  const issuer = '제주도청'
   const socket = yield call(connect);
   const callbackUrl = isMobile
     ? createCallbackUrl(callbackId)
@@ -135,6 +146,11 @@ function* sendVerification(action) {
     if (isMobile) {
       yield put(sendVerificationSuccess(callbackId, jwtUrl));
     } else {
+      console.log(jwt);
+      console.log(pushToken);
+      if (pushToken) {
+        const response = yield call(expoPush, pushToken, issuer, jwt);
+      }
       if (pushToken && publicEncKey) {
         transport.push.send(pushToken, publicEncKey)(jwt);
         yield put(sendVerificationSuccess(callbackId, jwtUrl, true));
