@@ -425,6 +425,7 @@ CITY_ID.requiredClaims = CITY_ID.generatedClaims.map(c => ({
   ...c,
   issuedBy: [YOURSELF]
 }));
+CITY_ID.requiredServices = [];
 DIPLOMA.requiredClaims = [NAME, DATE_OF_BIRTH];
 DIPLOMA.requiredServices = [CITY_ID];
 DIPLOMA.generatedClaims = [SCHOOL_NAME, PROGRAM_NAME, GRADUATION_YEAR, FINAL_GRADES];

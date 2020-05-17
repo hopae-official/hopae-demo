@@ -19,38 +19,39 @@ const delay = async () => new Promise(resolve => {
 });
 
 const poll = async (url, callbackId) => {
-  const getContent = async () => {
-    const response = await request(url, {
-      type: "get",
-      dataType: "json"
-    });
-    const data = response.json;
-    if (!data)
-      throw new Error(`No response from ${url}`);
-    if (data.status !== "success")
-      throw new Error(`Failed response from ${url}`);
-    const content = data && data.message && data.message.content;
-    if (content && content.length) {
-      try {
-        const contentJSON = JSON.parse(content);
-        if (isJWT(contentJSON.access_token))
-          return contentJSON.access_token;
-      } catch (ex) {
-        console.log(ex);
-        captureException(ex);
-        return null;
-      }
-    }
-  };
-  let content = await getContent();
-  while (!content) {
-    await delay();
-    const index = openRequests.findIndex(id => id === callbackId);
-    if (index === -1)
-      break;
-    content = await getContent();
-  }
-  return content;
+  // const getContent = async () => {
+  //   const response = await request(url, {
+  //     type: "get",
+  //     dataType: "json"
+  //   });
+  //   const data = response.json;
+  //   if (!data)
+  //     throw new Error(`No response from ${url}`);
+  //   if (data.status !== "success")
+  //     throw new Error(`Failed response from ${url}`);
+  //   const content = data && data.message && data.message.content;
+  //   if (content && content.length) {
+  //     try {
+  //       const contentJSON = JSON.parse(content);
+  //       if (isJWT(contentJSON.access_token))
+  //         return contentJSON.access_token;
+  //     } catch (ex) {
+  //       console.log(ex);
+  //       captureException(ex);
+  //       return null;
+  //     }
+  //   }
+  // };
+  // let content = await getContent();
+  // while (!content) {
+  //   await delay();
+  //   const index = openRequests.findIndex(id => id === callbackId);
+  //   if (index === -1)
+  //     break;
+  //   content = await getContent();
+  // }
+  // return content;
+  return null
 };
 
 function* pollChasqui(action) {
