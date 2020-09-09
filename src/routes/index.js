@@ -23,7 +23,7 @@ export default () => (<ConnectedRouter history={history}>
     <Route path="/redirect" render={() =>
       <App>
         <Redirect />
-      </App>}  />
+      </App>} />
     <Route path="/_debug" exact render={() =>
       <App>
         <Debug />

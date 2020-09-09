@@ -1,0 +1,5 @@
+function GetElqContentPersonalizationValue(strDataField){ var strTemp = '';        if(strDataField == 'V_Total_Pages' || strDataField == 'Total_Pages'){strTemp = '13';}
+        if(strDataField == 'V_Total_Visits' || strDataField == 'Total_Visits'){strTemp = '2';}
+        if(strDataField == 'V_LastVisitDateAndTime' || strDataField == 'LastVisitDateAndTime'){strTemp = '2020-09-09 09:16:03.163';}
+        if(strDataField == 'V_ElqCompanyName' || strDataField == 'ElqCompanyName'){strTemp = 'LG CNS';}
+	return strTemp; } if (this.SetElqContent){ SetElqContent(); }

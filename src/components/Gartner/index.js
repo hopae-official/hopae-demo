@@ -15,7 +15,7 @@ class Debug extends React.Component {
   render() {
     const { liteqr, universalLinks } = this.state;
     return (<Main>
-        <h1>Gartner</h1>
+      <h1>Gartner</h1>
     </Main>);
   }
 }
