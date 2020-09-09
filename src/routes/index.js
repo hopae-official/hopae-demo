@@ -9,6 +9,9 @@ import Redirect from "../components/Redirect";
 import Debug from "../components/Debug";
 import Home from "../components/Home";
 import Registration from "../components/Registration";
+import Gartner from "../components/Gartner";
+import GartnerVideo from "../components/GartnerVideo";
+
 import Service from "../components/Service";
 
 export default () => (<ConnectedRouter history={history}>
@@ -24,6 +27,14 @@ export default () => (<ConnectedRouter history={history}>
     <Route path="/_debug" exact render={() =>
       <App>
         <Debug />
+      </App>} />
+    <Route path="/gartner/video" exact render={() =>
+      <App>
+        <GartnerVideo />
+      </App>} />
+    <Route path="/gartner" exact render={() =>
+      <App>
+        <Gartner />
       </App>} />
     <Route path={registration.path} render={() =>
       <App serviceId={registration.serviceId}>
